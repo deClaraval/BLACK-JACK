@@ -7,7 +7,7 @@ ADVERTENCIA!! Proyecto finalizado en un 90%. Aunque es funcional tenga en cuenta
 •	Para reiniciar, pulse F5.
 
 Comenzando 🚀:
-Mira Deployment para probar el proyecto: <a href="https://declaraval.github.io/Black-Jack/"> Black Jack !! </a>
+<a href="https://declaraval.github.io/Black-Jack/">Mira Deployment para probar el proyecto Black Jack !!</a>
 
 Instrucciones 📖: Vence a la mano de la banca con un Black Jack o quedándote lo mas cerca posible de 21 con tus cartas sin pasarte. El As puede valer 1 u 11. El resto de las cartas valen lo que marca su valor, excepto las figuras (J, Q, K) que valen 10.
 
