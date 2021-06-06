@@ -11,7 +11,7 @@ Mira Deployment para probar el proyecto: <a href="https://declaraval.github.io/B
 
 Instrucciones 📖: Vence a la mano de la banca con un Black Jack o quedándote lo mas cerca posible de 21 con tus cartas sin pasarte. El As puede valer 1 u 11. El resto de las cartas valen lo que marca su valor, excepto las figuras (J, Q, K) que valen 10.
 
-"[...] Y si vuesa merced es versado en este juego, verá cuánta ventaja lleva el que sabe que tiene cierto un as a la primera carta, que le puede servir de un punto y de once; que con esta ventaja, siendo la veintiuna envidada, el dinero se queda en casa." "Rinconete y Cortadillo". Miguel de Cervantes (Novelas ejemplares - 1613)
+"[...] Y si vuesa merced es versado en este juego, verá cuánta ventaja lleva el que sabe que tiene cierto un as a la primera carta, que le puede servir de un punto y de once; que con esta ventaja, siendo la veintiuna envidada, el dinero se queda en casa."<br>"Rinconete y Cortadillo", de Miguel de Cervantes (Novelas ejemplares - 1613)
 
 Pre-requisitos 📋 Se recomienda tener actualizado tu navegador web, Firefox, Chrome, Opera, Edge...
 
