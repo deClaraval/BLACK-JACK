@@ -2,8 +2,8 @@
 
 Versión Html & Javascript del clásico juego de cartas de "las 21", conocido hoy como Black-Jack / Html & Javascript version of the classic "21" card game, known today as Black-Jack.
 
-ADVERTENCIA!! Proyecto finalizado en un 90%. Aunque es funcional tenga en cuenta los siguientes detalles:
-•	Si obtiene dos cartas iguales, la función "Separar mano" aún está en desarrollo; si la selecciona el juego quedara finalizado.
+ADVERTENCIA!! Proyecto finalizado en un 90%. Aunque es funcional tenga en cuenta los siguientes detalles: <br>
+•	Si obtiene dos cartas iguales, la función "Separar mano" aún está en desarrollo; si la selecciona el juego quedara finalizado. <br>
 •	Para reiniciar, pulse F5.
 
 Comenzando 🚀:
