@@ -1,0 +1,1213 @@
+@charset "utf-8";
+/* CSS Document */
+/* Author: Bernardo Castán Martínez */
+@font-face {
+    font-family: "BlackJack";
+    src:url("../font/BlackJackScript.ttf");
+}
+@font-face{
+	font-family: "Lobster-Regular";
+    src:url("../font/Lobster-Regular.ttf")
+}
+
+/* Fuera Scrollbars */
+
+body {
+	overflow: hidden;
+}
+
+/* Estilo para la mesa - centrado */
+h1, h3{
+    display:block;
+    text-align: center;
+	z-index:1;
+}
+
+#contenedor {
+    position:relative;
+}
+
+.mesa {
+    position:absolute;
+    box-sizing: border-box;
+    /* border: 2px solid red; */
+    background-image: url("../imgs/bases/mesa-blackjack.png");
+    background-repeat: no-repeat;
+	background-position: top center;
+    height: 630px;
+	width: 1200px;
+}
+
+.carta{
+    border: 3px solid whitesmoke;
+	border-radius: 10px;
+	position:fixed;
+	width: 59px;
+	height:90px;
+	z-index: 1000;
+    margin-left:750px; 
+	margin-right: auto; 
+	top:70px;
+}
+
+#carta1{
+    margin-left:750px; 
+	margin-right: auto; 
+	top:70px;
+}
+
+.cajaJugador{
+	/* border: 3px solid white; */
+	border-radius: 50%;
+	margin:10px;
+	padding:10px;
+	display:flex;
+	flex-wrap: wrap;
+	align-items: center;
+	align-content: center;
+	position:absolute;
+	width: 200px;
+	height:200px;
+	z-index: 200;
+}
+
+#Mazo{
+    /*border: 3px solid white; */
+	border-radius: 50%;
+	margin-left:700px; 
+	margin-right: auto;
+	top:0px;
+	background-image: url("../imgs/mazoCartas.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	position:absolute;
+	z-index:10;
+}
+
+#asiento0{
+	margin-left:500px; 
+	margin-right: auto; 
+	top:20px;
+}
+#asiento1{
+	margin-left:25px; 
+	margin-right: auto;
+	top:20px;
+	background-image: url("../imgs/sitioLibre.png");
+}
+#asiento2{
+	margin-left: 975px; 
+	margin-right: auto;
+	top:20px;
+	background-image: url("../imgs/sitioLibre.png");
+}
+#asiento3{
+	margin-left:140px; 
+	margin-right: auto;
+	top:235px;
+	background-image: url("../imgs/sitioLibre.png");
+}
+#asiento4{
+	margin-left: 855px; 
+	margin-right: auto;
+	top:235px;
+	background-image: url("../imgs/sitioLibre.png");
+}
+#asiento5{
+	margin-left:355px; 
+	margin-right: auto;
+	top:380px;
+	background-image: url("../imgs/sitioLibre.png");
+}
+#asiento6{
+	margin-left: 640px; 
+	margin-right: auto;
+	top:380px;
+	background-image: url("../imgs/sitioLibre.png");
+}
+
+/* ------------ Coordenadas para el Menu de Opciones ----------------------------------- */
+
+.MenuOpciones1, .MenuOpciones2, .MenuOpciones3, .MenuOpciones4, .MenuOpciones5, .MenuOpciones6{
+	width: 238px;
+	height: auto;
+	position: absolute;
+	z-index: 100000;
+	background-image: url(../imgs/menu.png);
+	background-repeat: no-repeat;
+}
+.MenuOpciones1{ 
+	margin-left:25px; 
+	margin-right: auto;
+	top:170px;}
+.MenuOpciones2{ 
+	margin-left: 975px; 
+	margin-right: auto;
+	top:170px; }
+.MenuOpciones3{ 
+	margin-left:140px; 
+	margin-right: auto;
+	top:385px; }
+.MenuOpciones4{ 
+	margin-left: 855px; 
+	margin-right: auto;
+	top:385px; }
+.MenuOpciones5{ 
+	margin-left:355px; 
+	margin-right: auto;
+	top:550px; }
+.MenuOpciones6{ 
+	margin-left: 640px; 
+	margin-right: auto;
+	top:550px; }
+
+.MenuDivideMano1, .MenuDivideMano2, .MenuDivideMano3, .MenuDivideMano4, .MenuDivideMano5,.MenuDivideMano6 {
+	width: 238px;
+	height: auto;
+	position: absolute;
+	z-index: 100000;
+	background-image: url(../imgs/menu.png);
+	background-repeat: no-repeat;
+}
+.MenuDivideMano1{ 
+	margin-left:25px; 
+	margin-right: auto;
+	top:170px;}
+.MenuDivideMano2{ 
+	margin-left: 975px; 
+	margin-right: auto;
+	top:170px; }
+.MenuDivideMano3{ 
+	margin-left:140px; 
+	margin-right: auto;
+	top:385px; }
+.MenuDivideMano4{ 
+	margin-left: 855px; 
+	margin-right: auto;
+	top:385px; }
+.MenuDivideMano5{ 
+	margin-left:355px; 
+	margin-right: auto;
+	top:550px; }
+.MenuDivideMano6{ 
+	margin-left: 640px; 
+	margin-right: auto;
+	top:550px; }
+
+.Jugada{
+	border-radius: 10px;
+	border-right:thick;
+	border-left:thick;
+	border-color:aqua;
+	color:rgb(222, 212, 230);
+	display:inline;
+	font-family: "Lobster-Regular";
+	font-size: 0.9em;
+	padding: 5px;
+	background: radial-gradient(circle, rgba(37, 35, 112, 0.5) 0%, rgba(174, 185, 196, 0.5));
+}
+
+input[type="checkbox"]{ 
+	width:35px; 
+	height:35px;
+	opacity: 0.5;
+	border: none;
+}
+.C::before{
+	content: url(../imgs/C.png);
+}
+.D::before{
+	content: url(../imgs/D.png);
+}
+.P::before{
+	content: url(../imgs/P.png);
+}
+.T::before{
+	content: url(../imgs/T.png);
+}
+
+#info, #cuentaCartas{
+	display: inline;
+	/*width: 100%;*/
+	font-family: "Lobster-Regular";
+	font-size: 1.1em;
+	text-align: center;
+	margin-top:1em;
+	color:gold;
+}
+
+#asiento0, #asiento1, #asiento2, #asiento3, #asiento4, #asiento5, #asiento6 {
+	background-repeat: no-repeat;
+	background-position: center;
+	z-index: 10;
+}
+
+/* ************** movimientos de los naipes ***************** */
+/* Marcamos las coordenadas de inicio y destino de cada naipe que pueda salir */
+
+.asientoNaipe{
+	/*border:1px solid red; */
+	width: 25px;
+	height: 25px;
+	position: fixed;
+}
+
+/* ++++++++++++ ASIENTO 0 (BANCA) ++++++++++++++++++++ */
+@keyframes lanzaCarta_Asiento_0_1 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0); }
+	to { top: 200px; left: 468px;
+        transform: rotate(360deg); }
+ }
+ #div_0_1 { top: 200px; left: 468px; }
+
+ @keyframes lanzaCarta_Asiento_0_2 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 200px; left: 534px;
+        transform: rotate(360deg); }
+ }
+ #div_0_2 { top: 200px; left: 534px; }
+
+ @keyframes lanzaCarta_Asiento_0_3 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 200px; left: 600px;
+        transform: rotate(360deg); }
+ }
+ #div_0_3 { top: 200px; left: 600px; }
+
+ @keyframes lanzaCarta_Asiento_0_4 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 200px; left: 667px;
+        transform: rotate(360deg); }
+ }
+ #div_0_4 { top: 200px; left: 667px; }
+
+ @keyframes lanzaCarta_Asiento_0_5 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 150px; left: 468px;
+        transform: rotate(360deg); }
+ }
+ #div_0_5 { top: 150px; left: 468px; }
+
+ @keyframes lanzaCarta_Asiento_0_6 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 150px; left: 534px;
+        transform: rotate(360deg); }
+ }
+ #div_0_6 { top: 150px; left: 534px; }
+
+ @keyframes lanzaCarta_Asiento_0_7 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 150px; left: 600px;
+        transform: rotate(360deg); }
+ }
+ #div_0_7 { top: 150px; left: 600px; }
+
+ @keyframes lanzaCarta_Asiento_0_8 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 150px; left: 667px;
+        transform: rotate(360deg); }
+ }
+ #div_0_8 { top: 150px; left: 667px; }
+
+/* ++++++++++++ ASIENTO 1 ++++++++++++++++++++ */
+@keyframes lanzaCarta_Asiento_1_1 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 70px; left: 20px;
+        transform: rotate(360deg); }
+ }
+ #div_1_1 { top: 70px; left: 20px; }
+
+ @keyframes lanzaCarta_Asiento_1_2 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 70px; left: 86px;
+        transform: rotate(360deg); }
+ }
+ #div_1_2 { top: 70px; left: 86px; }
+
+ @keyframes lanzaCarta_Asiento_1_3 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 70px; left: 152px;
+        transform: rotate(360deg); }
+ }
+ #div_1_3 { top: 70px; left: 152px; }
+
+ @keyframes lanzaCarta_Asiento_1_4 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 70px; left: 218px;
+        transform: rotate(360deg); }
+ }
+ #div_1_4 { top: 70px; left: 218px; }
+
+ @keyframes lanzaCarta_Asiento_1_5 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 20px; left: 14px;
+        transform: rotate(360deg); }
+ }
+ #div_1_5 { top: 20px; left: 14px; }
+
+ @keyframes lanzaCarta_Asiento_1_6 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 20px; left: 86px;
+        transform: rotate(360deg); }
+ }
+ #div_1_6 { top: 20px; left: 86px; }
+
+ @keyframes lanzaCarta_Asiento_1_7 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 20px; left: 152px;
+        transform: rotate(360deg); }
+ }
+ #div_1_7 { top: 20px; left: 152px; }
+
+ @keyframes lanzaCarta_Asiento_1_8 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 20px; left: 218px;
+        transform: rotate(360deg); }
+ }
+ #div_1_8 { top: 20px; left: 218px; }
+
+/* ++++++++++++ ASIENTO 2 ++++++++++++++++++++ */
+ @keyframes lanzaCarta_Asiento_2_1 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 70px; left: 935px;
+        transform: rotate(360deg); }
+ }
+ #div_2_1 { top: 70px; left:935px; }
+
+ @keyframes lanzaCarta_Asiento_2_2 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 70px; left: 1001px;
+        transform: rotate(360deg); }
+ }
+ #div_2_2 { top: 70px; left:1001px; }
+
+ @keyframes lanzaCarta_Asiento_2_3 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 70px; left: 1067px;
+        transform: rotate(360deg); }
+ }
+ #div_2_3 { top: 70px; left:1067px; }
+
+ @keyframes lanzaCarta_Asiento_2_4 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 70px; left: 1133px;
+        transform: rotate(360deg); }
+ }
+ #div_2_4 { top: 70px; left:1133px; }
+
+ @keyframes lanzaCarta_Asiento_2_5 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 20px; left: 935px;
+        transform: rotate(360deg); }
+ }
+ #div_2_5 { top: 20px; left:935px; }
+
+ @keyframes lanzaCarta_Asiento_2_6 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 20px; left: 1001px;
+        transform: rotate(360deg); }
+ }
+ #div_2_6 { top: 20px; left:1001px; }
+
+ @keyframes lanzaCarta_Asiento_2_7 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 20px; left: 1067px;
+        transform: rotate(360deg); }
+ }
+ #div_2_7 { top: 20px; left:1068px; }
+
+ @keyframes lanzaCarta_Asiento_2_8 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 20px; left: 1133px;
+        transform: rotate(360deg); }
+ }
+ #div_2_8 { top: 20px; left:1133px; }
+
+/* ++++++++++++ ASIENTO 3 ++++++++++++++++++++ */
+ @keyframes lanzaCarta_Asiento_3_1 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 290px; left: 109px;
+        transform: rotate(360deg); }
+ }
+ #div_3_1 { top: 290px; left:109px; }
+
+ @keyframes lanzaCarta_Asiento_3_2 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 290px; left: 175px;
+        transform: rotate(360deg); }
+ }
+ #div_3_2 { top: 290px; left:175px; }
+
+ @keyframes lanzaCarta_Asiento_3_3 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 290px; left: 241px;
+        transform: rotate(360deg); }
+ }
+ #div_3_3 { top: 290px; left:241px; }
+
+ @keyframes lanzaCarta_Asiento_3_4 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 290px; left: 307px;
+    transform: rotate(360deg); }
+ }
+ #div_3_4 { top: 290px; left:307px; }
+
+ @keyframes lanzaCarta_Asiento_3_5 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 240px; left: 109px;
+        transform: rotate(360deg); }
+ }
+ #div_3_5 { top: 240px; left:109px; }
+
+ @keyframes lanzaCarta_Asiento_3_6 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 240px; left: 175px;
+        transform: rotate(360deg); }
+ }
+ #div_3_6 { top: 240px; left:175px; }
+
+ @keyframes lanzaCarta_Asiento_3_7 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 240px; left: 241px;
+        transform: rotate(360deg); }
+ }
+ #div_3_7 { top: 240px; left:241px; }
+
+ @keyframes lanzaCarta_Asiento_3_8 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 240px; left: 307px;
+        transform: rotate(360deg); }
+ }
+ #div_3_8 { top: 240px; left:307px; }
+
+ /* ++++++++++++ ASIENTO 4 ++++++++++++++++++++ */
+
+ @keyframes lanzaCarta_Asiento_4_1 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 290px; left: 815px;
+        transform: rotate(360deg); }
+ }
+ #div_4_1 { top: 290px; left:815px; }
+
+ @keyframes lanzaCarta_Asiento_4_2 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 290px; left: 881px;
+        transform: rotate(360deg); }
+ }
+ #div_4_2 { top: 290px; left:881px; }
+
+ @keyframes lanzaCarta_Asiento_4_3 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 290px; left: 947px;
+        transform: rotate(360deg); }
+ }
+ #div_4_3 { top: 290px; left:947px; }
+
+ @keyframes lanzaCarta_Asiento_4_4 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 290px; left: 1013px;
+        transform: rotate(360deg); }
+ }
+ #div_4_4 { top: 290px; left:1013px; }
+
+ @keyframes lanzaCarta_Asiento_4_5 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 240px; left: 815px;
+        transform: rotate(360deg); }
+ }
+ #div_4_5 { top: 240px; left:815px; }
+
+ @keyframes lanzaCarta_Asiento_4_6 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 240px; left: 881px;
+        transform: rotate(360deg); }
+ }
+ #div_4_6 { top: 240px; left:881px; }
+
+ @keyframes lanzaCarta_Asiento_4_7 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 240px; left: 947px;
+        transform: rotate(360deg); }
+ }
+ #div_4_7 { top: 240px; left:947px; }
+
+ @keyframes lanzaCarta_Asiento_4_8 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 240px; left: 1013px;
+        transform: rotate(360deg); }
+ }
+ #div_4_8 { top: 240px; left:1013px; }
+
+ /* ++++++++++++ ASIENTO 5 ++++++++++++++++++++ */
+
+ @keyframes lanzaCarta_Asiento_5_1 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 460px; left: 332px;
+        transform: rotate(360deg); }
+ }
+ #div_5_1 { top: 460px; left:332px; }
+
+ @keyframes lanzaCarta_Asiento_5_2 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 460px; left: 398px;
+        transform: rotate(360deg); }
+ }
+ #div_5_2 { top: 460px; left:398px; }
+
+ @keyframes lanzaCarta_Asiento_5_3 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 460px; left: 464px;
+        transform: rotate(360deg); }
+ }
+ #div_5_3 { top: 460px; left:464px; }
+
+ @keyframes lanzaCarta_Asiento_5_4 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 460px; left: 530px;
+        transform: rotate(360deg); }
+ }
+ #div_5_4 { top: 460px; left:530px; }
+
+ @keyframes lanzaCarta_Asiento_5_5 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 410px; left: 332px;
+        transform: rotate(360deg); }
+ }
+ #div_5_5 { top: 410px; left:332px; }
+
+ @keyframes lanzaCarta_Asiento_5_6 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 410px; left: 398px;
+        transform: rotate(360deg); }
+ }
+ #div_5_6 { top: 410px; left:398px; }
+
+ @keyframes lanzaCarta_Asiento_5_7 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 410px; left: 464px;
+        transform: rotate(360deg); }
+ }
+ #div_5_7 { top: 410px; left:464px; }
+
+ @keyframes lanzaCarta_Asiento_5_8 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 410px; left: 530px;
+        transform: rotate(360deg); }
+ }
+ #div_5_8 { top: 410px; left:530px; }
+
+ /* ++++++++++++ ASIENTO 6 ++++++++++++++++++++ */
+
+ @keyframes lanzaCarta_Asiento_6_1 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 460px; left: 612px;
+        transform: rotate(360deg); }
+ }
+ #div_6_1 { top: 460px; left:612px; }
+
+ @keyframes lanzaCarta_Asiento_6_2 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 460px; left: 678px;
+        transform: rotate(360deg); }
+ }
+ #div_6_2 { top: 460px; left:678px; }
+
+ @keyframes lanzaCarta_Asiento_6_3 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 460px; left: 744px;
+        transform: rotate(360deg); }
+ }
+ #div_6_3 { top: 460px; left:744px; }
+
+ @keyframes lanzaCarta_Asiento_6_4 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 460px; left: 810px;
+		transform: rotate(360deg); }
+ }
+     
+
+#div_6_4 { top: 460px; left:810px;}
+
+ @keyframes lanzaCarta_Asiento_6_5 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 410px; left: 612px;
+		transform: rotate(360deg); }
+ }
+     
+
+#div_6_5 { top: 410px; left:612px;}
+
+ @keyframes lanzaCarta_Asiento_6_6 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 410px; left: 678px;
+        transform: rotate(360deg); }
+ }
+ #div_6_6 { top: 410px; left:678px; }
+
+ @keyframes lanzaCarta_Asiento_6_7 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 410px; left: 744px;
+        transform: rotate(360deg); }
+ }
+ #div_6_7 { top: 410px; left:744px; }
+
+ @keyframes lanzaCarta_Asiento_6_8 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 410px; left: 810px;
+        transform: rotate(360deg); }
+ }
+ #div_6_8 { top: 410px; left:810px; }
+
+/* ********************************************* ZOCALOS PARA  MANO DIVIDIA ***************************************************** */
+
+/* ++++++++++++ ASIENTO 1 ++++++++++++++++++++ */
+@keyframes lanzaCarta_Asiento_11_1 {
+	from { top: 70px; left: 86px;
+        transform: rotate(0);  }
+	to { top: 120px; left: 20px;
+        transform: rotate(360deg); }
+ }
+ #div_11_1 { top: 120px; left: 20px; }
+
+ @keyframes lanzaCarta_Asiento_11_2 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 120px; left: 86px;
+        transform: rotate(360deg); }
+ }
+ #div_11_2 { top: 120px; left: 86px; }
+
+ @keyframes lanzaCarta_Asiento_11_3 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 120px; left: 152px;
+        transform: rotate(360deg); }
+ }
+ #div_11_3 { top: 120px; left: 152px; }
+
+ @keyframes lanzaCarta_Asiento_11_4 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 120px; left: 218px;
+        transform: rotate(360deg); }
+ }
+ #div_11_4 { top: 120px; left: 218px; }
+
+ @keyframes lanzaCarta_Asiento_11_5 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 170px; left: 14px;
+        transform: rotate(360deg); }
+ }
+ #div_11_5 { top: 170px; left: 14px; }
+
+ @keyframes lanzaCarta_Asiento_11_6 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 170px; left: 86px;
+        transform: rotate(360deg); }
+ }
+ #div_11_6 { top: 170px; left: 86px; }
+
+ @keyframes lanzaCarta_Asiento_11_7 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 170px; left: 152px;
+        transform: rotate(360deg); }
+ }
+ #div_11_7 { top: 170px; left: 152px; }
+
+ @keyframes lanzaCarta_Asiento_11_8 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 170px; left: 218px;
+        transform: rotate(360deg); }
+ }
+ #div_11_8 { top: 170px; left: 218px; }
+
+/* ++++++++++++ ASIENTO 2 ++++++++++++++++++++ */
+ @keyframes lanzaCarta_Asiento_22_1 {
+	from { top: 70px; left: 1001px;
+        transform: rotate(0);  }
+	to { top: 120px; left: 935px;
+        transform: rotate(360deg); }
+ }
+ #div_22_1 { top: 120px; left:935px; }
+
+ @keyframes lanzaCarta_Asiento_22_2 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 120px; left: 1001px;
+        transform: rotate(360deg); }
+ }
+ #div_22_2 { top: 120px; left:1001px; }
+
+ @keyframes lanzaCarta_Asiento_22_3 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 120px; left: 1067px;
+        transform: rotate(360deg); }
+ }
+ #div_22_3 { top: 120px; left:1067px; }
+
+ @keyframes lanzaCarta_Asiento_22_4 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 120px; left: 1133px;
+        transform: rotate(360deg); }
+ }
+ #div_22_4 { top: 120px; left:1133px; }
+
+ @keyframes lanzaCarta_Asiento_22_5 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 170px; left: 935px;
+        transform: rotate(360deg); }
+ }
+ #div_22_5 { top: 170px; left:935px; }
+
+ @keyframes lanzaCarta_Asiento_22_6 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 170px; left: 1001px;
+        transform: rotate(360deg); }
+ }
+ #div_22_6 { top: 170px; left:1001px; }
+
+ @keyframes lanzaCarta_Asiento_2_7 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 170px; left: 1067px;
+        transform: rotate(360deg); }
+ }
+ #div_22_7 { top: 170px; left:1068px; }
+
+ @keyframes lanzaCarta_Asiento_22_8 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 170px; left: 1133px;
+        transform: rotate(360deg); }
+ }
+ #div_22_8 { top: 170px; left:1133px; }
+
+/* ++++++++++++ ASIENTO 3 ++++++++++++++++++++ */
+ @keyframes lanzaCarta_Asiento_33_1 {
+	from { top: 290px; left: 175px;
+        transform: rotate(0);  }
+	to { top: 340px; left: 109px;
+        transform: rotate(360deg); }
+ }
+ #div_33_1 { top: 340px; left:109px; }
+
+ @keyframes lanzaCarta_Asiento_33_2 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 340px; left: 175px;
+        transform: rotate(360deg); }
+ }
+ #div_33_2 { top: 340px; left:175px; }
+
+ @keyframes lanzaCarta_Asiento_33_3 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 340px; left: 241px;
+        transform: rotate(360deg); }
+ }
+ #div_33_3 { top: 340px; left:241px; }
+
+ @keyframes lanzaCarta_Asiento_33_4 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 340px; left: 307px;
+    transform: rotate(360deg); }
+ }
+ #div_33_4 { top: 340px; left:307px; }
+
+ @keyframes lanzaCarta_Asiento_33_5 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 290px; left: 109px;
+        transform: rotate(360deg); }
+ }
+ #div_33_5 { top: 290px; left:109px; }
+
+ @keyframes lanzaCarta_Asiento_33_6 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 290px; left: 175px;
+        transform: rotate(360deg); }
+ }
+ #div_33_6 { top: 290px; left:175px; }
+
+ @keyframes lanzaCarta_Asiento_33_7 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 290px; left: 241px;
+        transform: rotate(360deg); }
+ }
+ #div_33_7 { top: 290px; left:241px; }
+
+ @keyframes lanzaCarta_Asiento_33_8 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 290px; left: 307px;
+        transform: rotate(360deg); }
+ }
+ #div_33_8 { top: 290px; left:307px; }
+
+ /* ++++++++++++ ASIENTO 4 ++++++++++++++++++++ */
+
+ @keyframes lanzaCarta_Asiento_44_1 {
+	from { top: 290px; left: 881px;
+        transform: rotate(0);  }
+	to { top: 340px; left: 815px;
+        transform: rotate(360deg); }
+ }
+ #div_44_1 { top: 340px; left:815px; }
+
+ @keyframes lanzaCarta_Asiento_44_2 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 340px; left: 881px;
+        transform: rotate(360deg); }
+ }
+ #div_44_2 { top: 340px; left:881px; }
+
+ @keyframes lanzaCarta_Asiento_44_3 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 340px; left: 947px;
+        transform: rotate(360deg); }
+ }
+ #div_44_3 { top: 340px; left:947px; }
+
+ @keyframes lanzaCarta_Asiento_44_4 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 340px; left: 1013px;
+        transform: rotate(360deg); }
+ }
+ #div_44_4 { top: 340px; left:1013px; }
+
+ @keyframes lanzaCarta_Asiento_44_5 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 340px; left: 815px;
+        transform: rotate(360deg); }
+ }
+ #div_44_5 { top: 340px; left:815px; }
+
+ @keyframes lanzaCarta_Asiento_44_6 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 290px; left: 881px;
+        transform: rotate(360deg); }
+ }
+ #div_44_6 { top: 290px; left:881px; }
+
+ @keyframes lanzaCarta_Asiento_44_7 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 290px; left: 947px;
+        transform: rotate(360deg); }
+ }
+ #div_44_7 { top: 290px; left:947px; }
+
+ @keyframes lanzaCarta_Asiento_44_8 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 290px; left: 1013px;
+        transform: rotate(360deg); }
+ }
+ #div_44_8 { top: 290px; left:1013px; }
+
+ /* ++++++++++++ ASIENTO 5 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+ @keyframes lanzaCarta_Asiento_55_1 {
+	from { top: 460px; left: 398px;
+        transform: rotate(0);  }
+	to { top: 510px; left: 332px;
+        transform: rotate(360deg); }
+ }
+ #div_55_1 { top: 510px; left:332px; }
+
+ @keyframes lanzaCarta_Asiento_55_2 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 510px; left: 398px;
+        transform: rotate(360deg); }
+ }
+ #div_55_2 { top: 510px; left:398px; }
+
+ @keyframes lanzaCarta_Asiento_55_3 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 510px; left: 464px;
+        transform: rotate(360deg); }
+ }
+ #div_55_3 { top: 510px; left:464px; }
+
+ @keyframes lanzaCarta_Asiento_55_4 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 510px; left: 530px;
+        transform: rotate(360deg); }
+ }
+ #div_55_4 { top: 510px; left:530px; }
+
+ @keyframes lanzaCarta_Asiento_55_5 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 460px; left: 332px;
+        transform: rotate(360deg); }
+ }
+ #div_55_5 { top: 460px; left:332px; }
+
+ @keyframes lanzaCarta_Asiento_55_6 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 460px; left: 398px;
+        transform: rotate(360deg); }
+ }
+ #div_55_6 { top: 460px; left:398px; }
+
+ @keyframes lanzaCarta_Asiento_55_7 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 460px; left: 464px;
+        transform: rotate(360deg); }
+ }
+ #div_55_7 { top: 460px; left:464px; }
+
+ @keyframes lanzaCarta_Asiento_55_8 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 460px; left: 530px;
+        transform: rotate(360deg); }
+ }
+ #div_55_8 { top: 460px; left:530px; }
+
+ /* ++++++++++++ ASIENTO 6 ++++++++++++++++++++ */
+
+ @keyframes lanzaCarta_Asiento_66_1 {
+	from { top: 460px; left: 678px;
+        transform: rotate(0);  }
+	to { top: 510px; left: 612px;
+        transform: rotate(360deg); }
+ }
+ #div_66_1 { top: 510px; left:612px; }
+
+ @keyframes lanzaCarta_Asiento_66_2 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 510px; left: 678px;
+        transform: rotate(360deg); }
+ }
+ #div_66_2 { top: 510px; left:678px; }
+
+ @keyframes lanzaCarta_Asiento_66_3 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 510px; left: 744px;
+        transform: rotate(360deg); }
+ }
+ #div_66_3 { top: 510px; left:744px; }
+
+ @keyframes lanzaCarta_Asiento_66_4 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 510px; left: 810px;
+		transform: rotate(360deg); }
+ }
+#div_66_4 { top: 510px; left:810px;}
+
+ @keyframes lanzaCarta_Asiento_66_5 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 460px; left: 612px;
+		transform: rotate(360deg); }
+ }
+#div_66_5 { top: 460px; left:612px;}
+
+ @keyframes lanzaCarta_Asiento_66_6 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 460px; left: 678px;
+        transform: rotate(360deg); }
+ }
+ #div_66_6 { top: 460px; left:678px; }
+
+ @keyframes lanzaCarta_Asiento_66_7 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 460px; left: 744px;
+        transform: rotate(360deg); }
+ }
+ #div_66_7 { top: 460px; left:744px; }
+
+ @keyframes lanzaCarta_Asiento_66_8 {
+	from { left: 850px; top: 70px;
+        transform: rotate(0);  }
+	to { top: 460px; left: 810px;
+        transform: rotate(360deg); }
+ }
+ #div_66_8 { top: 460px; left:810px; }
+
+/* ****************************************************************************************************************************** */
+ /* ------------- Estilos para carta descubierta ------------------------------- */
+
+   @keyframes descubre1 {
+	0% { width: 59px; }
+  	100% { width: 0px; }
+  }
+ 
+  @keyframes descubre2 {
+	0% { width: 0px; }
+  	100% { width: 59px; }
+  }
+
+ /* ------------- CONTROLES DEJUEGO Y MENSAJES, ESTILOS PARA CASH Y DEMAS----------------- */
+ #mensajes{
+
+	position: absolute; 
+	margin-left: auto; 
+	margin-right: auto; 
+	left: 0; 
+	right: 0;
+	top:80px;
+	z-index: 10;
+
+}
+
+.pCash, .apuesta{
+	width:150px;
+	text-align: center;
+	position:absolute;
+	margin-left: auto; 
+	margin-right: auto; 
+	left: 0; 
+	right: 0;
+	/*top:130px;*/
+	color:midnightblue;
+	text-shadow: 0.1em 0.1em 0.2em white;
+	font-family: verdana;
+	font-size:1.2em
+}
+
+.pCash {top:130px;}
+.apuesta{top:110px;}
+
+.controles{
+	width: 100%;
+	display:flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+.formApuesta{
+	font-family: "Lobster-Regular";
+	font-size: 1.2em;
+	display:block;
+	width: 100%;
+	text-align: center;
+	color:midnightblue;
+}
+input{
+	background:transparent;
+	outline: none;
+	display:inline;
+	width: 25%;
+	border-radius: 10px;
+	border-right:thick;
+	border-left:thick;
+	border-color:aqua;
+	color:rgb(222, 212, 230);
+	font-family: "Lobster-Regular";
+	font-size: 1.2em;
+	
+	text-align: center;
+	background: radial-gradient(circle, rgba(37, 35, 112, 0.5) 0%, rgba(174, 185, 196, 0.5));
+}
+.controlesJuego{
+	width:100%;
+	border-radius: 10px;
+	border-right:thick;
+	border-left:thick;
+	border-color:aqua;
+	color:rgb(222, 212, 230);
+	
+	font-family: "Lobster-Regular";
+	font-size: 1.2em;
+	padding: 5px;
+	background: radial-gradient(circle, rgba(37, 35, 112, 0.5) 0%, rgba(174, 185, 196, 0.5));
+}
+
+#InicioPartida{
+	position: absolute; 
+	margin-left: auto; 
+	margin-right: auto; 
+	left: 0; 
+	right: 0;
+	top:200px;
+	background-color: transparent;
+	border-radius: 15px;
+	border:none;
+	z-index: 1000;
+} 

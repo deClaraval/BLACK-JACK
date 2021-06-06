@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="es-ES">
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Bernardo Castán Martínez" />
+	<meta name="Description" content="Black-Jack" />
+	<title>Black-Jack</title>
+	<link href="css/css2.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <!--! <h1>BlackJack</h1> -->
+    <div id="contenedor">
+        <div class="mesa">
+
+            <div id="MenuOpciones">
+                <center>
+                <p id="info"></p>
+                <p id="cuentaCartas"></p>
+                <div id="valordeAs"></div>
+                    <button id="pedircarta" class="Jugada">Pedir Carta</button>
+                    <button id="doblar" class="Jugada">Doblar</button>
+                    <button id="plantarse" class="Jugada">Plantarse</button>
+                    <button id="separar" class="Jugada">Separar</button>
+                    <button id="seguro" class="Jugada">Seguro</button> 
+                    <button id="retirarse" class="Jugada">Retirarse</button>
+                </center>
+            </div>
+
+            <div id="MenuDivideMano">
+                <center>
+                    <p id="info1"></p>
+                    <p id="cuentaCartasMD"></p>
+                    <div id="valordeAsM1"></div>
+                    <div id="valordeAsM2"></div>
+                        <button id="plantarseM1" class="Jugada">Me Planto (M1)</button>
+                        <button id="pedircartaMD" class="Jugada">Pedir Carta</button>
+                        <button id="plantarseM2" class="Jugada">Me Planto (M2)</button>
+                        <button id="retirarseMD" class="Jugada">Retirarse</button>
+                </center>
+            </div>
+
+            <button id="InicioPartida" onclick="IniciarPartida()" hidden="true" style="z-index: 10000000;">
+                <img src="imgs/iniciarpartida.png" width="300px" height="100px" alt="Iniciar la Partida" />
+            </button>
+
+            <svg id="mensajes" width=732 height=322></svg>
+
+            <div id="Mazo" class="cajaJugador"></div>
+
+            <div id="asiento0" class="cajaJugador"></div>
+
+            <div id="asiento1" class="cajaJugador">
+                <p id="ApuestaJ1" class="apuesta"></p>
+                <p id="CashJ1" class="pCash"></p>
+                <div class="controles">
+                    <div class="formApuesta">
+                            Apuesta :
+                            <input type="number" id="Beat1" name="Beat1" pattern="\d*" min="2" max="10" required  oninput="validarInput('Beat1','cipJ1')" />
+                            fichas
+                    </div>
+                    <button id="cipJ1" onclick="unirse('asiento1')" class="controlesJuego">Unirse</button>
+                    <button id="cfpJ1" onclick="acabar('asiento1')" class="controlesJuego" hidden="hidden">Salir</button>
+                </div>
+            </div>
+
+            <div id="asiento2" class="cajaJugador">
+                <p id="ApuestaJ2" class="apuesta"></p>
+                <p id="CashJ2" class="pCash"></p>
+                <div class="controles">
+                    <div class="formApuesta">
+                            Apuesta :
+                            <input type="number" id="Beat2" name="Beat2" pattern="\d*" min="2" max="10" required  oninput="validarInput('Beat2','cipJ2')" />
+                            fichas
+                    </div>
+                    <button id="cipJ2" onclick="unirse('asiento2')" class="controlesJuego">Unirse</button>
+                    <button id="cfpJ2" onclick="acabar('asiento2')" class="controlesJuego" hidden="hidden">Salir</button>
+                </div>
+            </div>
+        
+            <div id="asiento3" class="cajaJugador">
+                <p id="ApuestaJ3" class="apuesta"></p>
+                <p id="CashJ3" class="pCash"></p>
+                <div class="controles">
+                    <div class="formApuesta">
+                            Apuesta :
+                            <input type="number" id="Beat3" name="Beat3" pattern="\d*" min="2" max="10" required  oninput="validarInput('Beat3','cipJ3')" />
+                            fichas
+                    </div>
+                    <button id="cipJ3" onclick="unirse('asiento3')" class="controlesJuego">Unirse</button>
+                    <button id="cfpJ3" onclick="acabar('asiento3')" class="controlesJuego" hidden="hidden">Salir</button>
+                </div>
+            </div>
+
+            <div id="asiento4" class="cajaJugador">
+                <p id="ApuestaJ4" class="apuesta"></p>
+                <p id="CashJ4" class="pCash"></p>
+                <div class="controles">
+                    <div class="formApuesta">
+                            Apuesta :
+                            <input type="number" id="Beat4" name="Beat4" pattern="\d*" min="2" max="10" required  oninput="validarInput('Beat4','cipJ4')" />
+                            fichas
+                    </div>
+                    <button id="cipJ4" onclick="unirse('asiento4')" class="controlesJuego">Unirse</button>
+                    <button id="cfpJ4" onclick="acabar('asiento4')" class="controlesJuego" hidden="hidden">Salir</button>
+                </div>
+            </div>
+
+            <div id="asiento5" class="cajaJugador">
+                <p id="ApuestaJ5" class="apuesta"></p>
+                <p id="CashJ5" class="pCash"></p>
+                <div class="controles">
+                    <div class="formApuesta">
+                            Apuesta :
+                            <input type="number" id="Beat5" name="Beat5" pattern="\d*" min="2" max="10" required  oninput="validarInput('Beat5','cipJ5')" />
+                            fichas
+                    </div>
+                    <button id="cipJ5" onclick="unirse('asiento5')" class="controlesJuego">Unirse</button>
+                    <button id="cfpJ5" onclick="acabar('asiento5')" class="controlesJuego" hidden="hidden">Salir</button>
+                </div>
+            </div>
+
+            <div id="asiento6" class="cajaJugador">
+                <p id="ApuestaJ6" class="apuesta"></p>
+                <p id="CashJ6" class="pCash"></p>
+                <div class="controles">
+                    <div class="formApuesta">
+                            Apuesta :
+                            <input type="number" id="Beat6" name="Beat6" pattern="\d*" min="2" max="10" required  oninput="validarInput('Beat6','cipJ6')" />
+                            fichas
+                    </div>
+                    <button id="cipJ6" onclick="unirse('asiento6')" class="controlesJuego">Unirse</button>
+                    <button id="cfpJ6" onclick="acabar('asiento6')" class="controlesJuego" hidden="hidden">Salir</button>
+                </div>
+            </div>
+      
+			<div id="div_0_1" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_0_2" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_0_3" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_0_4" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_0_5" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_0_6" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_0_7" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_0_8" class="asientoNaipe" style="z-index: 1;"></div>
+    		<div id="div_1_1" class="asientoNaipe" style="z-index: 2;"></div>
+            <div id="div_1_2" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_1_3" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_1_4" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_1_5" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_1_6" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_1_7" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_1_8" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_2_1" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_2_2" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_2_3" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_2_4" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_2_5" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_2_6" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_2_7" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_2_8" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_3_1" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_3_2" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_3_3" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_3_4" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_3_5" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_3_6" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_3_7" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_3_8" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_4_1" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_4_2" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_4_3" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_4_4" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_4_5" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_4_6" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_4_7" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_4_8" class="asientoNaipe" style="z-index: 1;"></div>
+	    	<div id="div_5_1" class="asientoNaipe" style="z-index: 2;"></div>
+ 			<div id="div_5_2" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_5_3" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_5_4" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_5_5" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_5_6" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_5_7" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_5_8" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_6_1" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_6_2" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_6_3" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_6_4" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_6_5" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_6_6" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_6_7" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_6_8" class="asientoNaipe" style="z-index: 1;"></div>
+
+            <!-- <img id="carta1" src="imgs/A-D.png" class="carta" > -->
+            <!-- Zocalos para las posibles divisiones de manos: -->
+
+            <div id="div_11_1" class="asientoNaipe" style="z-index: 2;"></div>
+            <div id="div_11_2" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_11_3" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_11_4" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_11_5" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_11_6" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_11_7" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_11_8" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_22_1" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_22_2" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_22_3" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_22_4" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_22_5" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_22_6" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_22_7" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_22_8" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_33_1" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_33_2" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_33_3" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_33_4" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_33_5" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_33_6" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_33_7" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_33_8" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_44_1" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_44_2" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_44_3" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_44_4" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_44_5" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_44_6" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_44_7" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_44_8" class="asientoNaipe" style="z-index: 1;"></div>
+	    	<div id="div_55_1" class="asientoNaipe" style="z-index: 2;"></div>
+ 			<div id="div_55_2" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_55_3" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_55_4" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_55_5" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_55_6" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_55_7" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_55_8" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_66_1" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_66_2" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_66_3" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_66_4" class="asientoNaipe" style="z-index: 2;"></div>
+			<div id="div_66_5" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_66_6" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_66_7" class="asientoNaipe" style="z-index: 1;"></div>
+			<div id="div_66_8" class="asientoNaipe" style="z-index: 1;"></div>
+
+        </div>	
+    </div>
+    <!-- <h3>Pié de página</h3> -->
+<script src="js/js.js"></script>
+</body>
+</html>
